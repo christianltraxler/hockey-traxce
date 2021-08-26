@@ -1,65 +1,36 @@
 import "./style.css";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Home from "./components/Home/Home";
 
-function App() {
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-  return (
-    <>
-     <div class="sidebar">
-    <div class="logo-details">
-      <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name">Hockey Trax</div>
-        <i class='bx bx-menu' id="btn" ></i>
-    </div>
-    <ul class="nav-list">
-      <li>
-        <a href="#">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Dashboard</span>
-        </a>
-         <span class="tooltip">Dashboard</span>
-      </li>
-      <li>
-       <a href="#">
-         <i class='bx bx-user' ></i>
-         <span class="links_name">User</span>
-       </a>
-       <span class="tooltip">User</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
-       </a>
-       <span class="tooltip">Messages</span>
-     </li>
-     <li>
-       <a href="/settings">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
-       </a>
-       <span class="tooltip">Setting</span>
-     </li>
-     <li class="profile">
-         <div class="profile-details">
-           <img src="profile.jpg" alt="profileImg"/>
-           <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
-           </div>
-         </div>
-         <i class='bx bx-log-out' id="log_out" ></i>
-     </li>
-    </ul>
-  </div>
-  <section class="home-section">
-      <div class="text">Dashboard</div>
-  </section>
+
+const App = () =>(
+  <>
+    <Sidebar/>
+    <Router>
+      <div className="app">
+        <Route path="/games" component={Home}/>
+        <Route path="/skaters" component={Home}/>
+        <Route path="/goalies" component={Home}/>
+        <Route path="/lines" component={Home}/>
+        <Route path="/teams" component={Home}/>
+        <Route path="/settings" component={Home}/>
+      </div>
+    </Router>
   </>
-
-  );
-}
+);
 
 export default App;
 
+// #eefbff
+// purple: #7485D7
+//#4495EE
 // blue: #355592
 // red: #D64C4A
