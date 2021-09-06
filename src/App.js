@@ -1,15 +1,15 @@
 import "./style.css";
 
-import Sidebar from "./components/Sidebar/Sidebar";
-import Home from "./components/Home/Home";
-import Games from "./components/Games/Games";
-import Skaters from "./components/Skaters/Skaters";
-import Goalies from "./components/Goalies/Goalies";
-import Lines from "./components/Lines/Lines";
-import Teams from "./components/Teams/Teams";
-import Settings from "./components/Settings/Settings";
+import Sidebar from "./components/Sidebar/Sidebar.js";
+import Home from "./components/Home/Home.js";
+import Games from "./components/Games/Games.js";
+import Skaters from "./components/Skaters/Skaters.js";
+import Goalies from "./components/Goalies/Goalies.js";
+import Lines from "./components/Lines/Lines.js";
+import Teams from "./components/Teams/Teams.js";
+import Settings from "./components/Settings/Settings.js";
 
-import { StateProvider } from "./functions/store"; 
+import { StateProvider } from "./functions/store.js"; 
 
 import React from "react";
 import {
