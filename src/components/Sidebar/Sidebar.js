@@ -1,32 +1,38 @@
-import "./sidebar.css";
+import "./Sidebar.css";
 import NavLink from "./NavLink";
-
-import React, { useState } from 'react';
+import { store } from "../../functions/store";
+import React, { useContext } from 'react';
 
 const Sidebar = () => {
-  const [menuToggle, setMenuToggle] = useState(true);
+  const { state, dispatch } = useContext(store);
 
   return (
-    <div className={`sidebar ${menuToggle ? "open" : ""}`}>
+    <div className={`sidebar ${state.menuToggle ? "open" : ""}`}>
       <div className="logo-details">
-        <img src="logo.svg" alt=""/>
-        <div className="logo_name">Hockey Trax</div>
-        <i className='bx bx-menu' id="btn" onClick={() => setMenuToggle(!menuToggle)}></i>
+        <div className="logo_name">Hockey Traxce</div>
+        <i className='bx bx-menu' id="btn" onClick={() => dispatch({ type: 'TOGGLE_MENU' })}></i>
       </div>
       <ul className="nav-list">
         <NavLink link="/" icon="bx-home" name="Home"/>
         <NavLink link="/games" icon="bxs-flag-checkered" name="Games"/>
         <NavLink link="/skaters" icon="bx-walk" name="Skaters"/>
         <NavLink link="/goalies" icon="bx-shield-x" name="Goalies"/>
-        <NavLink link="/lines" icon="bx-group" name="Lines"/>
         <NavLink link="/teams" icon="bxs-t-shirt" name="Teams"/>
-        <NavLink link="/settings" icon="bx-cog" name="Settings"/>
       </ul>
     </div>
   ) 
 };
 
 export default Sidebar;
+
+/* 
+        <img src="logo.svg" alt=""/> 
+*/
+
+/*
+        <NavLink link="/lines" icon="bx-group" name="Lines"/>
+        <NavLink link="/settings" icon="bx-cog" name="Settings"/>
+ */
 
 /* 
   Profile Section (unsure if login will be necessary)

@@ -1,0 +1,53 @@
+.skaters-page .text{
+    display: inline-block;
+    color: #11101d;
+    font-size: 36px;
+    font-weight: 500;
+    margin: 18px 0;
+}
+  
+.skaters-page{
+    position: relative;
+    top: 0;
+    left: 78px;
+    z-index: 2;
+
+    width: calc(100% - 78px);
+    min-height: 100vh;
+    transition: all 0.5s ease;
+
+    background: #eefbff;
+
+    padding: 0 50px;
+
+}
+  
+.sidebar.open ~ div.app .skaters-page {
+    left: 200px;
+    width: calc(100% - 200px);
+}
+
+  
+.skaters-page div.border {
+    border: 3px solid black !important;
+    height: 100vh;
+}
+
+.skaters-page .btn-primary {
+    background-color: #D64C4A;
+    border: none;
+    margin-left: 5px;
+}
+
+.skaters-page .player-links {
+    min-height: 750px;
+    border: 2px grey solid;
+    border-radius: 50px;
+    margin: 20px 0;
+
+}
+
+.skaters-page .top-skaters {
+    padding: 100px;
+
+}
