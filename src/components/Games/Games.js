@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 
 const Games = () => {
-  const games = {};
+  //const games = {};
   return(
     <section className="games-page">
       <Row>

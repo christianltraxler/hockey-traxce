@@ -9,9 +9,9 @@ import Home from "./components/Home/Home.js";
 import Games from "./components/Games/Games.js";
 import Skaters from "./components/Skaters/Skaters.js";
 import Goalies from "./components/Goalies/Goalies.js";
-import Lines from "./components/Lines/Lines.js";
+//import Lines from "./components/Lines/Lines.js";
 import Teams from "./components/Teams/Teams.js";
-import Settings from "./components/Settings/Settings.js";
+//import Settings from "./components/Settings/Settings.js";
 
 import { StateProvider } from "./functions/store.js"; 
 
