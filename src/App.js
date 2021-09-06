@@ -1,8 +1,4 @@
 import "./style.css";
-import "./Sidebar.css";
-import "./Skaters.css";
-import "./Goalies.css";
-import "./Teams.css";
 
 import Sidebar from "./components/Sidebar/Sidebar.js";
 import Home from "./components/Home/Home.js";
