@@ -1,5 +1,3 @@
-import "./Games.css";
-
 import { Row, Col } from "react-bootstrap";
 
 const Games = () => {

@@ -1,5 +1,3 @@
-import "./Goalies.css";
-
 import { Row, Col } from "react-bootstrap";
 
 const Goalies = () => {

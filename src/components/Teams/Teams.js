@@ -1,5 +1,3 @@
-import "./Teams.css";
-
 import { Row, Col } from "react-bootstrap";
 
 const Teams = () => {
