@@ -1,4 +1,5 @@
 import "./style.css";
+import "./components/Sidebar//Sidebar.css";
 
 import Sidebar from "./components/Sidebar/Sidebar.js";
 import Home from "./components/Home/Home.js";

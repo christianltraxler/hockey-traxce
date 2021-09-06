@@ -1,4 +1,3 @@
-import "./Sidebar.css";
 import NavLink from "./NavLink";
 import { store } from "../../functions/store";
 import React, { useContext } from 'react';
