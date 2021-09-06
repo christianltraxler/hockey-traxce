@@ -31,3 +31,437 @@
     width: calc(100% - 200px);
   }
   /* #endregion */
+
+  .sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 78px;
+    background: #355592;
+    padding: 6px 14px;
+    z-index: 99;
+    transition: all 0.5s ease;
+  }
+  
+  .sidebar.open{
+    width: 200px;
+  }
+  
+  /* #region Sidebar Logo */
+  .sidebar .logo-details{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .sidebar .logo-details .icon{
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  .sidebar .logo-details .logo_name{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 0;
+  }
+  .sidebar.open .logo-details .icon,
+  .sidebar.open .logo-details .logo_name{
+    opacity: 1;
+  }
+  .sidebar .logo-details #btn{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    transition: all 0.4s ease;
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .sidebar.open .logo-details #btn{
+    text-align: right;
+  }
+  .sidebar.open .logo-details img{
+    display: inherit;
+    height: 100px;
+    width: auto;
+    padding-left: 10px;
+  }
+  .sidebar .logo-details img{
+    display: none;
+  }
+  /* #endregion */
+  
+   /* #region NavList */
+  .sidebar i{
+    color: #fff;
+    height: 60px;
+    min-width: 50px;
+    font-size: 28px;
+    text-align: center;
+    line-height: 60px;
+  }
+  .sidebar .nav-list{
+    margin-top: 20px;
+    height: 100%;
+    padding: 0;
+  }
+  .sidebar li{
+    position: relative;
+    margin: 8px 0;
+    list-style: none;
+  }
+   /* #endregion */
+  
+  /* #region Link Tooltips */
+  .sidebar li .tooltip{
+    position: absolute;
+    top: -20px;
+    left: calc(100% + 15px);
+    z-index: 3;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: 0s;
+  }
+  .sidebar li:hover .tooltip{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .sidebar.open li .tooltip{
+    display: none;
+  }
+  /* #endregion */
+
+  /* #region NavLink */
+  .sidebar li a{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    background: #385fa6;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  .sidebar.open li a{
+    background: #355592;
+    box-shadow: 0px 0px 0px;
+  }
+  .sidebar li a:hover{
+    background: #FFF;
+  }
+  .sidebar li a .links_name{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+  }
+  .sidebar.open li a .links_name{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .sidebar li a:hover .links_name,
+  .sidebar li a:hover i{
+    transition: all 0.5s ease;
+    color: #11101D;
+  }
+  .sidebar li i{
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+  /* #endregion */
+  
+  /* #region Profile */
+  .sidebar li.profile{
+    position: fixed;
+    height: 60px;
+    width: 78px;
+    left: 0;
+    bottom: -8px;
+    padding: 10px 14px;
+    background: #355592;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar.open li.profile{
+    width: 200px;
+  }
+
+  .sidebar li.profile .name {
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .sidebar .profile #log_out{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: #355592;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 0px;
+    transition: all 0.5s ease;
+  }
+  .sidebar.open .profile #log_out{
+    width: 50px;
+    background: none;
+  }
+  /* #endregion */
+  
+  /* #region Responsive */
+  @media (max-width: 420px) {
+    .sidebar li .tooltip{
+      display: none;
+    }
+  }
+  /* #endregion */
+
+  .teams-page .text{
+    display: inline-block;
+    color: #11101d;
+    font-size: 36px;
+    font-weight: 500;
+    margin: 18px 0;
+}
+  
+.teams-page {
+    position: relative;
+    top: 0;
+    left: 78px;
+    z-index: 2;
+
+    width: calc(100% - 78px);
+    min-height: 100vh;
+    transition: all 0.5s ease;
+
+    background: #eefbff;
+
+    padding: 0 50px;
+
+}
+  
+.sidebar.open ~ div.app .teams-page {
+    left: 200px;
+    width: calc(100% - 200px);
+}
+
+  
+.teams-page div.border {
+    border: 3px solid black !important;
+    height: 25vh;
+}
+
+.teams-page .division h4 {
+    margin: 0;
+    padding: 10px 0 0px;
+}
+
+.goalies-page .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 35px;
+  font-weight: 500;
+  margin: 18px
+}
+
+.goalies-page{
+  position: relative;
+  top: 0;
+  left: 78px;
+  z-index: 2;
+
+  width: calc(100% - 78px);
+  min-height: 100vh;
+  transition: all 0.5s ease;
+
+  background: #eefbff;
+
+  padding: 0 50px;
+
+}
+
+.sidebar.open ~ div.app .goalies-page {
+  left: 200px;
+  width: calc(100% - 200px);
+}
+
+
+.goalies-page div.border {
+  border: 3px solid black !important;
+  height: 100vh;
+}
+
+.games-page .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 36px;
+  font-weight: 500;
+  margin: 18px 0;
+}
+
+.games-page{
+  position: relative;
+  top: 0;
+  left: 78px;
+  z-index: 2;
+
+  width: calc(100% - 78px);
+  min-height: 100vh;
+  transition: all 0.5s ease;
+
+  background: #eefbff;
+
+  padding: 0 50px;
+}
+
+.sidebar.open ~ div.app .games-page {
+  left: 200px;
+  width: calc(100% - 200px);
+}
+
+.games-page div.border {
+  border: 2px solid black !important;
+  border-radius: 15px;
+  height: 50vh;
+}
+
+/* #region Day Card */
+.games-page div.day-card {
+  border: 3px solid grey !important;
+  border-radius: 40px;
+  margin-top: 40px;
+  height: 100vh;
+}
+
+.games-page .day-card h5 {
+  position: relative;
+  margin: 20px 15px 0 0;
+  left: 15px;
+}
+
+.games-page .day-card .center-area {
+  margin-top: 100px;
+}
+
+.games-page .day-card div.dropdown-divider {
+  height: 0;
+  margin: .5rem 20px;
+  overflow: hidden;
+  border-top: 1px solid rgba(0,0,0,.15);
+}
+
+.games-page .day-card img {
+  height: auto;
+  width: 60%;
+}
+
+.games-page .day-card .row  {
+  padding: 25px 0 0 0;
+}
+/* #endregion */
+
+/* #region Standings */
+.games-page .standings .row {
+  padding: 0;
+}  
+
+.games-page .standings .col-lg-6,
+.games-page .standings .col-lg-4,
+.games-page .standings .col-lg-2
+ {
+  padding: 0;
+}    
+
+.games-page .standings img {
+  padding: 0 5px 0 15px;
+  height: auto;
+  width: 100%;
+}  
+
+.games-page .standings h4 {
+  margin-left: 8px;
+}  
+
+.games-page .standings p {
+  margin: 0;
+  font-size: 12px;
+}  
+/* #endregion */
+
+.skaters-page .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 36px;
+  font-weight: 500;
+  margin: 18px 0;
+}
+
+.skaters-page{
+  position: relative;
+  top: 0;
+  left: 78px;
+  z-index: 2;
+
+  width: calc(100% - 78px);
+  min-height: 100vh;
+  transition: all 0.5s ease;
+
+  background: #eefbff;
+
+  padding: 0 50px;
+
+}
+
+.sidebar.open ~ div.app .skaters-page {
+  left: 200px;
+  width: calc(100% - 200px);
+}
+
+
+.skaters-page div.border {
+  border: 3px solid black !important;
+  height: 100vh;
+}
+
+.skaters-page .btn-primary {
+  background-color: #D64C4A;
+  border: none;
+  margin-left: 5px;
+}
+
+.skaters-page .player-links {
+  min-height: 750px;
+  border: 2px grey solid;
+  border-radius: 50px;
+  margin: 20px 0;
+
+}
+
+.skaters-page .top-skaters {
+  padding: 100px;
+
+}
